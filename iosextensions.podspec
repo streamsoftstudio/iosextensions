@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "iOS Extensions"
+  s.name         = "iosextensions"
   s.version      = "0.9.0"
   s.summary      = "Collection of iOS extensions"
   s.homepage     = "https://github.com/streamsoftstudio/iosextensions.git"
