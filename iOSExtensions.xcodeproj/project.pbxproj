@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		1704F822255DFDE5006EACD8 /* date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = date.swift; sourceTree = "<group>"; };
+		1704F823255DFDE5006EACD8 /* array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = array.swift; sourceTree = "<group>"; };
+		1704F824255DFDE5006EACD8 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
+		1704F825255DFDE5006EACD8 /* codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codable.swift; sourceTree = "<group>"; };
+		1704F826255DFDE5006EACD8 /* string.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = string.swift; sourceTree = "<group>"; };
 		17B6C7AF255DFB3F00FD6067 /* iOSExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B6C7B3255DFB3F00FD6067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17B6C7BE255DFB6200FD6067 /* date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = date.swift; sourceTree = "<group>"; };
-		17B6C7BF255DFB6200FD6067 /* array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = array.swift; sourceTree = "<group>"; };
-		17B6C7C0255DFB6200FD6067 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
-		17B6C7C1255DFB6200FD6067 /* codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codable.swift; sourceTree = "<group>"; };
-		17B6C7C2255DFB6200FD6067 /* string.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = string.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,10 +27,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1704F820255DFDE5006EACD8 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1704F821255DFDE5006EACD8 /* IOSExtensions */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		1704F821255DFDE5006EACD8 /* IOSExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				1704F822255DFDE5006EACD8 /* date.swift */,
+				1704F823255DFDE5006EACD8 /* array.swift */,
+				1704F824255DFDE5006EACD8 /* data.swift */,
+				1704F825255DFDE5006EACD8 /* codable.swift */,
+				1704F826255DFDE5006EACD8 /* string.swift */,
+			);
+			path = IOSExtensions;
+			sourceTree = "<group>";
+		};
 		17B6C7A5255DFB3F00FD6067 = {
 			isa = PBXGroup;
 			children = (
-				17B6C7BC255DFB6200FD6067 /* Sources */,
+				1704F820255DFDE5006EACD8 /* Sources */,
 				17B6C7B3255DFB3F00FD6067 /* Info.plist */,
 				17B6C7B0255DFB3F00FD6067 /* Products */,
 			);
@@ -42,27 +62,6 @@
 				17B6C7AF255DFB3F00FD6067 /* iOSExtensions.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		17B6C7BC255DFB6200FD6067 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				17B6C7BD255DFB6200FD6067 /* IOSExtensions */,
-			);
-			name = Sources;
-			path = ../Sources;
-			sourceTree = "<group>";
-		};
-		17B6C7BD255DFB6200FD6067 /* IOSExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				17B6C7BE255DFB6200FD6067 /* date.swift */,
-				17B6C7BF255DFB6200FD6067 /* array.swift */,
-				17B6C7C0255DFB6200FD6067 /* data.swift */,
-				17B6C7C1255DFB6200FD6067 /* codable.swift */,
-				17B6C7C2255DFB6200FD6067 /* string.swift */,
-			);
-			path = IOSExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
