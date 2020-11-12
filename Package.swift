@@ -8,11 +8,12 @@ let package = Package(
     platforms: [ .iOS(.v11)],
     products: [
         .library(
-            name: "ios_extensions",
-            targets: ["ios_extensions"]),
-    ],
+            name: "IOSExtensions",
+            targets: ["IOSExtensions"]),
+    ]
+    ,
     targets: [
-        .target( name: "ios_extensions", dependencies: []),
-        .testTarget( name: "ios_extensionsTests", dependencies: ["ios_extensions"]),
+        .target( name: "IOSExtensions", dependencies: []),
+        .testTarget( name: "ios_extensionsTests", dependencies: ["IOSExtensions"]),
     ]
 )
