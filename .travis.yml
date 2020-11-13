@@ -9,7 +9,7 @@ env:
   - PROJECT=iOSExtensions.xcodeproj
   - IOS_FRAMEWORK_SCHEME="iOSExtensions"
   matrix:
-    - DESTINATION="OS=12.2,name=iPhone X"          SCHEME="$IOS_FRAMEWORK_SCHEME"
+    - DESTINATION="OS=12.1,name=iPhone X"          SCHEME="$IOS_FRAMEWORK_SCHEME"
 script: 
   # Ensures that the return code from xcodebuild is passed along to xcpretty
   - set -o pipefail
