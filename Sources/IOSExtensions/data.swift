@@ -27,34 +27,38 @@ fileprivate class CRC32
 
 extension Data
 {
-
     // NOTE: Fastest implementation
-    var hexadecimalString:String {
-      let hexDigits = Array("0123456789ABCDEF".utf16)
-      var hexChars = [UTF16.CodeUnit]()
-      hexChars.reserveCapacity(count * 2)
+    public var hexadecimalString:String {
+        let hexDigits = Array("0123456789ABCDEF".utf16)
+        var hexChars = [UTF16.CodeUnit]()
+        hexChars.reserveCapacity(count * 2)
 
-      for byte in self {
-        let (index1, index2) = Int(byte).quotientAndRemainder(dividingBy: 16)
-        hexChars.append(hexDigits[index1])
-        hexChars.append(hexDigits[index2])
-      }
+        for byte in self {
+            let (index1, index2) = Int(byte).quotientAndRemainder(dividingBy: 16)
+            hexChars.append(hexDigits[index1])
+            hexChars.append(hexDigits[index2])
+        }
 
-      return String(utf16CodeUnits: hexChars, count: hexChars.count)
+        return String(utf16CodeUnits: hexChars, count: hexChars.count)
     }
 }
     
 extension Data
 {
-    var bytes: [UInt8] {
+    public var bytes: [UInt8] {
         var byteArray = [UInt8](repeating: 0, count: self.count)
         self.copyBytes(to: &byteArray, count: self.count)
         return byteArray
     }
-    func bytes(from index:Int) -> Array<UInt8> {
+    public func bytes(from index:Int) -> Array<UInt8> {
         return Array(self.bytes[index...])
     }
-    var crc:UInt32 {
+    public var crc:UInt32 {
         return CRC32.checksum(bytes:self.bytes)
+    }
+    public func chunks(into size: Int) -> [Data] {
+        return stride(from: 0, to: count, by: size).map {
+            Data(self[$0 ..< Swift.min($0 + size, count)])
+        }
     }
 }
