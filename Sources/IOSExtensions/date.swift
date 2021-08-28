@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Date
+public extension Date
 {
     func from(hour:Int, minute:Int) -> Date {
         return Calendar.current.date(from: DateComponents(calendar:  Calendar.current, year: self.year, month: self.month, day: self.day, hour: hour, minute: minute, second: 0)) ?? Date()

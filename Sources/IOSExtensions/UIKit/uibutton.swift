@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIButton {
+public extension UIButton {
 	/// Sets background color for a specific UIButton  state
 	/// - Parameters:
 	///   - color: Background color

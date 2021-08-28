@@ -25,7 +25,7 @@ fileprivate class CRC32
     }
 }
 
-extension Data
+public extension Data
 {
     // NOTE: Fastest implementation
     public var hexadecimalString:String {
@@ -43,7 +43,7 @@ extension Data
     }
 }
     
-extension Data
+public extension Data
 {
     public var bytes: [UInt8] {
         var byteArray = [UInt8](repeating: 0, count: self.count)

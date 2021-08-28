@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Dictionary
+public extension Dictionary
 {
     func fromDictionary<T:Decodable>() -> T?
     {
@@ -17,7 +17,7 @@ extension Dictionary
         return nil
     }
 }
-extension Encodable
+public extension Encodable
 {
     var dictionary: [String: Any]?
     {
@@ -28,7 +28,7 @@ extension Encodable
 }
 
 
-extension Decodable {
+public extension Decodable {
     
     static func decoded(str: String) -> Self? {
         if let data =  str.data(using: .utf8)  {
@@ -41,7 +41,7 @@ extension Decodable {
         return try? JSONDecoder().decode(Self.self, from: data)
     }
 }
-extension Encodable {
+public extension Encodable {
     var encoded:String? {
         if let e = try? JSONEncoder().encode(self), let val = String(data:e, encoding: .utf8) {
             return val

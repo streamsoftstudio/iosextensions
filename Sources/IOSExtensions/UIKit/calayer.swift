@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension CALayer {
+public extension CALayer {
 	func addShadow(_ offset: CGSize = CGSize(width: 0, height: 3.0), color: CGColor = UIColor.black.cgColor, opacity: Float = 0.2, radius: CGFloat = 2, rasterize: Bool = true) {
 		self.masksToBounds = false
 		self.shadowRadius = radius

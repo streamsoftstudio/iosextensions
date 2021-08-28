@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIImage {
+public extension UIImage {
 	static func createImageFrom(_ view:UIView?) -> UIImage? {
 		guard let view = view , view.bounds.size != .zero else {
 			fatalError("The UIView is either nil or has frame of CGSize.zero")
