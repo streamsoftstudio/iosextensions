@@ -16,8 +16,7 @@ extension UILabel {
 			if self.text!.prefix(string.count) != string {
 				timer.invalidate()
 			} else {
-				self.text = string.appending(string:Array(repeating: ellipsisSymbol, count: index).joined())
-//					"\(string)\(Array(repeating: ellipsisSymbol, count: index).joined())"
+				self.text = string.appending(Array(repeating: ellipsisSymbol, count: index).joined())
 				index += 1
 				index = index % (ellipsisCount + 1)
 			}
