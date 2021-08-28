@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  uicolor.swift
+//  iOSExtensions
 //
 //  Created by Dusan Juranovic on 10.8.21..
 //
@@ -8,6 +8,9 @@
 import UIKit
 
 public extension UIColor {
+	/// Create `UIColor` from a hexadecimal string.
+	/// - Parameter hex: Hexadecimal color string.
+	/// - Returns: `UIColor`
 	static func colorFromHexString (_ hex:String) -> UIColor {
 		var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 		
