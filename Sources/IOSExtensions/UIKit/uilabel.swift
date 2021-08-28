@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UILabel {
+public extension UILabel {
 	func animateEllipsis(_ string: String, timeInterval: TimeInterval = 0.5, ellipsisSymbol: String = ".", ellipsisCount: Int = 3) {
 		self.text = string
 		var index = 1
