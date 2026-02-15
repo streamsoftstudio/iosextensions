@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1704F82F255DFFAA006EACD8 /* iOSExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1704F82E255DFFAA006EACD8 /* iOSExtensionsTests.swift */; };
 		1704F831255DFFAA006EACD8 /* iOSExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B6C7AF255DFB3F00FD6067 /* iOSExtensions.framework */; };
+		7593E9CB26D80DC500DFA859 /* view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7593E9CA26D80DC500DFA859 /* view.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,11 @@
 		1704F830255DFFAA006EACD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17B6C7AF255DFB3F00FD6067 /* iOSExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B6C7B3255DFB3F00FD6067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7593E9C626D80D9400DFA859 /* uibutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = uibutton.swift; path = UIKit/uibutton.swift; sourceTree = "<group>"; };
+		7593E9C726D80D9400DFA859 /* uiimage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = uiimage.swift; path = UIKit/uiimage.swift; sourceTree = "<group>"; };
+		7593E9C826D80D9400DFA859 /* calayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = calayer.swift; path = UIKit/calayer.swift; sourceTree = "<group>"; };
+		7593E9C926D80D9400DFA859 /* uicolor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = uicolor.swift; path = UIKit/uicolor.swift; sourceTree = "<group>"; };
+		7593E9CA26D80DC500DFA859 /* view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = view.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +70,16 @@
 		1704F821255DFDE5006EACD8 /* IOSExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				7593E9C826D80D9400DFA859 /* calayer.swift */,
+				7593E9C626D80D9400DFA859 /* uibutton.swift */,
+				7593E9C926D80D9400DFA859 /* uicolor.swift */,
+				7593E9C726D80D9400DFA859 /* uiimage.swift */,
 				1704F822255DFDE5006EACD8 /* date.swift */,
 				1704F823255DFDE5006EACD8 /* array.swift */,
 				1704F824255DFDE5006EACD8 /* data.swift */,
 				1704F825255DFDE5006EACD8 /* codable.swift */,
 				1704F826255DFDE5006EACD8 /* string.swift */,
+				7593E9CA26D80DC500DFA859 /* view.swift */,
 			);
 			path = IOSExtensions;
 			sourceTree = "<group>";
@@ -164,6 +175,7 @@
 					};
 					17B6C7AE255DFB3F00FD6067 = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -216,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7593E9CB26D80DC500DFA859 /* view.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +246,9 @@
 		1704F835255DFFAA006EACD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XHKRD4QAYM;
 				INFOPLIST_FILE = iOSExtensionsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -250,7 +265,9 @@
 		1704F836255DFFAA006EACD8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XHKRD4QAYM;
 				INFOPLIST_FILE = iOSExtensionsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -389,9 +406,13 @@
 		17B6C7B8255DFB3F00FD6067 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XHKRD4QAYM;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -407,6 +428,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = rs.streamsoft.iOSExtensions;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -415,9 +437,13 @@
 		17B6C7B9255DFB3F00FD6067 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XHKRD4QAYM;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
