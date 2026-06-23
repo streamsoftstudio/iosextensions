@@ -1,19 +1,24 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
-    name: "iOS extensions",
-    platforms: [ .iOS(.v11)],
+    name: "IOSExtensions",
+    platforms: [
+        .iOS(.v13)
+    ],
     products: [
         .library(
             name: "IOSExtensions",
-            targets: ["IOSExtensions"]),
-    ]
-    ,
+            targets: ["IOSExtensions"]
+        ),
+    ],
     targets: [
-        .target( name: "IOSExtensions", dependencies: []),
-        .testTarget( name: "ios_extensionsTests", dependencies: ["IOSExtensions"]),
+        .target(name: "IOSExtensions"),
+        .testTarget(
+            name: "IOSExtensionsTests",
+            dependencies: ["IOSExtensions"]
+        ),
     ]
 )

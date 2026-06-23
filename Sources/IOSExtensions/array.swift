@@ -1,34 +1,23 @@
 //
-//  File.swift
-//  
+//  array.swift
+//  IOSExtensions
 //
 //  Created by Andrija Milovanovic on 11/12/20.
 //
 
 import Foundation
 
-
-extension Array where Element: Hashable {
-    var uniques: Array {
-        var buffer = Array()
-        var added = Set<Element>()
-        for elem in self {
-            if !added.contains(elem) {
-                buffer.append(elem)
-                added.insert(elem)
-            }
-        }
-        return buffer
-    }
+public extension Array where Element: Hashable {
+    /// Returns the array with duplicate elements removed, preserving the order
+    /// of first appearance.
     func removingDuplicates() -> [Element] {
-        var addedDict = [Element: Bool]()
-
-        return filter {
-            addedDict.updateValue(true, forKey: $0) == nil
-        }
+        var seen = Set<Element>()
+        return filter { seen.insert($0).inserted }
     }
 
+    /// Removes duplicate elements in place, preserving the order of first
+    /// appearance.
     mutating func removeDuplicates() {
-        self = self.removingDuplicates()
+        self = removingDuplicates()
     }
 }

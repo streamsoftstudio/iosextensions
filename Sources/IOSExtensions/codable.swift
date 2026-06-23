@@ -1,54 +1,49 @@
 //
-//  File.swift
-//  
+//  codable.swift
+//  IOSExtensions
 //
 //  Created by Andrija Milovanovic on 11/12/20.
 //
 
 import Foundation
 
-extension Dictionary
-{
-    func fromDictionary<T:Decodable>() -> T?
-    {
-        if let data = try? JSONSerialization.data(withJSONObject: self, options: .fragmentsAllowed) {
-            return try? JSONDecoder().decode(T.self, from: data)
-        }
-        return nil
-    }
-}
-extension Encodable
-{
-    var dictionary: [String: Any]?
-    {
+public extension Encodable {
+    /// A `[String: Any]` dictionary representation of the value, or `nil` if
+    /// encoding fails.
+    var dictionary: [String: Any]? {
         guard let data = try? JSONEncoder().encode(self) else { return nil }
-        return (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)).flatMap { $0 as? [String: Any] }
+        return (try? JSONSerialization.jsonObject(with: data)) as? [String: Any]
     }
-    
+
+    /// JSON string representation of the value, or `nil` if encoding fails.
+    var jsonString: String? {
+        guard let data = try? JSONEncoder().encode(self) else { return nil }
+        return String(data: data, encoding: .utf8)
+    }
+
+    /// Encodes the value to JSON `Data`, throwing if encoding fails.
+    func encodedJSON(using encoder: JSONEncoder = JSONEncoder()) throws -> Data {
+        try encoder.encode(self)
+    }
 }
 
-
-extension Decodable {
-    
-    static func decoded(str: String) -> Self? {
-        if let data =  str.data(using: .utf8)  {
-            return try? Self.decode(data:data)
-        }
-        return nil
+public extension Decodable {
+    /// Decodes a value from JSON `Data`, throwing if decoding fails.
+    static func decoded(from data: Data, using decoder: JSONDecoder = JSONDecoder()) throws -> Self {
+        try decoder.decode(Self.self, from: data)
     }
-    
-    static func decode(data: Data) throws -> Self? {
-        return try? JSONDecoder().decode(Self.self, from: data)
+
+    /// Decodes a value from a JSON string, or `nil` if it can't be decoded.
+    static func decoded(from string: String) -> Self? {
+        guard let data = string.data(using: .utf8) else { return nil }
+        return try? decoded(from: data)
     }
 }
-extension Encodable {
-    var encoded:String? {
-        if let e = try? JSONEncoder().encode(self), let val = String(data:e, encoding: .utf8) {
-            return val
-        }
-        return nil
-    }
-    func encode() throws -> Data? {
-        return try? JSONEncoder().encode(self)
+
+public extension Dictionary {
+    /// Decodes the dictionary into a `Decodable` value, or `nil` on failure.
+    func decoded<T: Decodable>(as type: T.Type = T.self) -> T? {
+        guard let data = try? JSONSerialization.data(withJSONObject: self) else { return nil }
+        return try? JSONDecoder().decode(T.self, from: data)
     }
 }

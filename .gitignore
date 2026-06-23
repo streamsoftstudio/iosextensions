@@ -1,5 +1,15 @@
-.swiftpm/xcode/xcuserdata
-iOSExtensions/iOSExtensions.xcodeproj/xcuserdata
-iOSExtensions.xcodeproj/xcuserdata
-.swiftpm/xcode/package.xcworkspace/xcuserdata
-iOSExtensions.xcodeproj/project.xcworkspace/xcuserdata
+# macOS
+.DS_Store
+
+# Xcode
+xcuserdata/
+DerivedData/
+*.xcuserstate
+
+# Swift Package Manager
+.build/
+Packages/
+.swiftpm/
+
+# CocoaPods
+Pods/

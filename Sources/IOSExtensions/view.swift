@@ -1,23 +1,22 @@
 //
 //  view.swift
-//  iOSExtensions
+//  IOSExtensions
 //
 //  Created by Andrija Milovanovic on 26.8.21..
 //
 
-import Foundation
+#if canImport(UIKit)
 import UIKit
 
-extension UIWindow {
+public extension UIWindow {
+    /// `true` if the active foreground window scene's interface orientation is
+    /// landscape.
     static var isLandscape: Bool {
-        if #available(iOS 13.0, *) {
-            return UIApplication.shared.windows
-                .first?
-                .windowScene?
-                .interfaceOrientation
-                .isLandscape ?? false
-        } else {
-            return UIApplication.shared.statusBarOrientation.isLandscape
-        }
+        UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .first { $0.activationState == .foregroundActive }?
+            .interfaceOrientation
+            .isLandscape ?? false
     }
 }
+#endif
