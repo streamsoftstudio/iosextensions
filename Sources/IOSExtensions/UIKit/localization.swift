@@ -8,6 +8,7 @@
 //  app while this helper lives in the shared package.
 //
 
+#if canImport(UIKit)
 import Foundation
 import UIKit
 
@@ -124,3 +125,4 @@ extension UIBarButtonItem: XIBLocalizable {
         set { title = newValue?.localized }
     }
 }
+#endif
