@@ -116,6 +116,10 @@ tableView.sizeHeaderToFit()
 
 // Content shows through this screen's navigation bar, as under a cover.
 navigationItem.makeBarTransparent()
+
+// Hides a stack view's arranged view without upsetting the stack, even
+// inside an animation.
+label.setHiddenIfNeeded(text == nil)
 ```
 
 ## License

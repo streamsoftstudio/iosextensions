@@ -43,5 +43,26 @@ final class UIKitLayoutTests: XCTestCase {
         XCTAssertNil(item.standardAppearance?.backgroundEffect)
         XCTAssertNil(UINavigationItem(title: "Other").standardAppearance)
     }
+
+    func testHiddenIsSetOnlyWhenItChanges() {
+        let view = HidingCounter()
+
+        view.setHiddenIfNeeded(true)
+        view.setHiddenIfNeeded(true)
+        view.setHiddenIfNeeded(false)
+
+        XCTAssertFalse(view.isHidden)
+        XCTAssertEqual(view.changes, 2)
+    }
+}
+
+/// Counts how often `isHidden` is set.
+private final class HidingCounter: UIView {
+
+    private(set) var changes = 0
+
+    override var isHidden: Bool {
+        didSet { changes += 1 }
+    }
 }
 #endif
