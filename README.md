@@ -113,6 +113,9 @@ view.layer.addCorners([.topLeft, .topRight], radius: 12)
 // A header laid out with Auto Layout, sized to the table's width; call it
 // from viewDidLayoutSubviews.
 tableView.sizeHeaderToFit()
+
+// Content shows through this screen's navigation bar, as under a cover.
+navigationItem.makeBarTransparent()
 ```
 
 ## License

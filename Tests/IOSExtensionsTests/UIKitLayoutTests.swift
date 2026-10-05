@@ -32,5 +32,16 @@ final class UIKitLayoutTests: XCTestCase {
 
         XCTAssertNil(table.tableHeaderView)
     }
+
+    func testATransparentBarIsSetForThatScreenOnly() {
+        let item = UINavigationItem(title: "Album")
+
+        item.makeBarTransparent()
+
+        XCTAssertNotNil(item.standardAppearance)
+        XCTAssertNotNil(item.scrollEdgeAppearance)
+        XCTAssertNil(item.standardAppearance?.backgroundEffect)
+        XCTAssertNil(UINavigationItem(title: "Other").standardAppearance)
+    }
 }
 #endif
