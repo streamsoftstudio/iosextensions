@@ -109,6 +109,10 @@ let snapshot = UIImage.image(from: someView) // UIImage?
 
 view.layer.addShadow(opacity: 0.3, radius: 4)
 view.layer.addCorners([.topLeft, .topRight], radius: 12)
+
+// A header laid out with Auto Layout, sized to the table's width; call it
+// from viewDidLayoutSubviews.
+tableView.sizeHeaderToFit()
 ```
 
 ## License
